@@ -97,3 +97,49 @@ solution = Solution()
 print(solution.findPairs([3, 1, 4, 1, 5], 2))
 
 #********************************************************************************************
+
+#find pairs in an array 
+class Solution:
+    def findPairs(self, nums: List[int], k: int) -> int:
+        if k < 0:
+            return 0
+        
+        count = {}
+        for num in nums:
+            count[num] = count.get(num, 0) + 1
+        
+        pairs = 0
+        for num in count:
+            if k == 0:
+                if count[num] > 1:
+                    pairs += 1
+            else:
+                if num + k in count:
+                    pairs += 1
+        
+        return pairs
+# Example usage:
+solution = Solution()
+print(solution.findPairs([3, 1, 4, 1, 5], 2))
+
+#********************************************************************************************
+
+#number of good pairs
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        count = {}
+        for num in nums:
+            count[num] = count.get(num, 0) + 1
+        
+        good_pairs = 0
+        for freq in count.values():
+            if freq > 1:
+                good_pairs += (freq * (freq - 1)) // 2
+        
+        return good_pairs
+# Example usage:
+solution = Solution()
+print(solution.numIdenticalPairs([1, 2, 3, 1, 1, 3]))
+
+#********************************************************************************************
+
