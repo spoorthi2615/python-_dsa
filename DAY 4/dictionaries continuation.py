@@ -142,7 +142,7 @@ def numIdenticalPairs(nums):
 
 #********************************************************************************************
 
-#find the maximu distance between the same elements in an array
+#1.7) find the maximu distance between the same elements in an array
 class Solution:
     def max_distance(self, nums):
         index_map = {}
@@ -157,8 +157,9 @@ class Solution:
         
         return max_dist
 
+#********************************************************************************************
 
-#degree of an array
+#1.8) degree of an array
 class Solution:
     def find_shortest_sub_array(self, nums):
         count = {}
@@ -181,5 +182,6 @@ class Solution:
                 min_length = min(min_length, length)
         
         return min_length
+    
         
 
