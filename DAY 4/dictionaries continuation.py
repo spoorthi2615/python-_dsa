@@ -158,4 +158,28 @@ class Solution:
         return max_dist
 
 
-#find identical pairs in an array
+#degree of an array
+class Solution:
+    def find_shortest_sub_array(self, nums):
+        count = {}
+        first_index = {}
+        last_index = {}
+        
+        for i, num in enumerate(nums):
+            if num not in count:
+                count[num] = 0
+                first_index[num] = i
+            count[num] += 1
+            last_index[num] = i
+        
+        degree = max(count.values())
+        min_length = float('inf')
+        
+        for num, freq in count.items():
+            if freq == degree:
+                length = last_index[num] - first_index[num] + 1
+                min_length = min(min_length, length)
+        
+        return min_length
+        
+
