@@ -1,5 +1,5 @@
-#dictionaries continuation
-#roman to integer
+# dictionaries continuation
+##1.1) roman to integer
 class Solution:
     def romanToInt(self, s: str) -> int:
         roman_numerals = {
@@ -30,7 +30,7 @@ print(solution.romanToInt("IV"))
 
 #********************************************************************************************
 
-# majority element
+#1.2) majority element
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         count = {}
@@ -50,7 +50,7 @@ print(solution.majorityElement([3, 2, 3]))
 
 #********************************************************************************************
 
-#unique occurences
+#1.3) unique occurences
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         count = {}
@@ -72,7 +72,8 @@ solution = Solution()
 print(solution.uniqueOccurrences([1, 2, 2, 1, 1, 3]))
 
 #********************************************************************************************
-#k-diff pairs in an array
+
+#1.4)k-diff pairs in an array
 class Solution:
     def findPairs(self, nums: List[int], k: int) -> int:
         if k < 0:
@@ -98,7 +99,7 @@ print(solution.findPairs([3, 1, 4, 1, 5], 2))
 
 #********************************************************************************************
 
-#find pairs in an array 
+#1.5)find pairs in an array 
 class Solution:
     def findPairs(self, nums: List[int], k: int) -> int:
         if k < 0:
@@ -124,9 +125,9 @@ print(solution.findPairs([3, 1, 4, 1, 5], 2))
 
 #********************************************************************************************
 
-#number of good pairs
+#1.6)number of good pairs
 class Solution:
-    def numIdenticalPairs(self, nums: List[int]) -> int:
+    def good_pairs(self, nums: List[int]) -> int:
         count = {}
         for num in nums:
             count[num] = count.get(num, 0) + 1
@@ -139,7 +140,8 @@ class Solution:
         return good_pairs
 # Example usage:
 solution = Solution()
-print(solution.numIdenticalPairs([1, 2, 3, 1, 1, 3]))
+print(solution.good_pairs([1, 2, 3, 1, 1, 3]))
 
 #********************************************************************************************
+
 
