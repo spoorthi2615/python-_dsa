@@ -23,3 +23,38 @@ def first_unique_frequency(arr):
 
 arr = [1, 2, 2, 3, 3, 3, 4]
 print(first_unique_frequency(arr))
+
+#*******************************************************************************************************
+
+# Given a list of integers, find the first element such that: frequency(current_element) > sum of frequencies of all DISTINCT elements appearing after it
+# Input Format
+# A Python list of integers.
+# Constraints
+# 1 <= len(nums) <= 10^5
+# Output Format
+# Print the required element. If none exists, print -1
+def first_element_with_greater_frequency(nums):
+    from collections import Counter
+    
+    frequency = Counter(nums)
+    total_distinct = len(set(nums))
+    
+    for i, num in enumerate(nums):
+        current_freq = frequency[num]
+        remaining_distinct = total_distinct - 1
+        
+        if current_freq > remaining_distinct:
+            return num
+        
+        frequency[num] -= 1
+        if frequency[num] == 0:
+            total_distinct -= 1
+    
+    return -1
+nums = [1, 2, 2, 3, 3, 3, 4]
+print(first_element_with_greater_frequency(nums))
+
+#*******************************************************************************************************
+
+
+
