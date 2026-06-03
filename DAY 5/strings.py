@@ -82,7 +82,7 @@ print(reverse_string_special("_Neha__"))
 
 #***************************************************************************************************
 
-#reverse only all the vowels in the string and return it
+#2.6) reverse only all the vowels in the string and return it
 def reverse_vowels(s):
     s = list(s)
     vowels = "aeiouAEIOU"
@@ -103,7 +103,7 @@ print(reverse_vowels("Neha__"))
 
 #***************************************************************************************************
 
-#Reverse Only Letters
+#2.7) Reverse Only Letters
 def reverse_only_letters(s):
     s = list(s)
     left, right = 0, len(s) - 1
@@ -119,3 +119,106 @@ def reverse_only_letters(s):
             right -= 1
 
     return "".join(s)
+
+#***************************************************************************************************
+
+#2.8)valid palindrome
+def is_palindrome(s):
+    left, right = 0, len(s) - 1
+
+    while left < right:
+        while left < right and not s[left].isalnum():
+            left += 1
+        while left < right and not s[right].isalnum():
+            right -= 1
+
+        if s[left].lower() != s[right].lower():
+            return False
+
+        left += 1
+        right -= 1
+
+    return True
+print(is_palindrome("A man, a plan, a canal: Panama"))
+
+#***************************************************************************************************
+
+ #2.9) length of the last word
+ def lengthOfLastWord(s):
+    length = 0
+    for i in range(len(s) - 1, -1, -1):
+        if s[i] != ' ':
+            length += 1
+        elif length > 0:
+            break
+    return length
+print(lengthOfLastWord("Hello World  "))
+
+#***************************************************************************************************
+
+#2.10) Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+def firstUniqChar(s):
+    char_count = {}
+    
+    for char in s:
+        char_count[char] = char_count.get(char, 0) + 1
+    
+    for index, char in enumerate(s):
+        if char_count[char] == 1:
+            return index
+    
+    return -1
+print(firstUniqChar("leetcode"))
+
+#***************************************************************************************************
+
+#2.11) find the length of longest word in a sentence
+def length_of_longest_word(s):
+    words = s.split()
+    max_length = 0
+    
+    for word in words:
+        max_length = max(max_length, len(word))
+    
+    return max_length
+print(length_of_longest_word("Hello world this is a test"))
+
+#***************************************************************************************************
+
+#2.12) A pangram is a sentence where every letter of the English alphabet appears at least once.
+# Given a string sentence containing only lowercase English letters, return true if sentence is a pangram, or false otherwise.
+def checkIfPangram(sentence):
+    alphabet = set("abcdefghijklmnopqrstuvwxyz")
+    for char in sentence:
+        if char in alphabet:
+            alphabet.remove(char)
+        if not alphabet:
+            return True
+    return False
+print(checkIfPangram("thequickbrownfoxjumpsoverthelazydog"))
+
+#***************************************************************************************************
+
+#2.13) Given a string s, return true if the s can be palindrome after deleting at most one character from it.
+def validPalindrome(s):
+    def is_palindrome_range(left, right):
+        while left < right:
+            if s[left] != s[right]:
+                return False
+            left += 1
+            right -= 1
+        return True
+    
+    left, right = 0, len(s) - 1
+    
+    while left < right:
+        if s[left] != s[right]:
+            return is_palindrome_range(left + 1, right) or is_palindrome_range(left, right - 1)
+        left += 1
+        right -= 1
+    
+    return True
+print(validPalindrome("abca"))
+
+#***************************************************************************************************
+
