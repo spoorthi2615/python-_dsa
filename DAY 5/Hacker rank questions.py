@@ -1,4 +1,4 @@
-#First Element With Unique Frequency    
+#1.1) First Element With Unique Frequency    
 #Given a list of integers, determine the first element whose frequency is unique.
 #A frequency is considered unique if no other element in the list has the same frequency.
 #If multiple elements have unique frequencies, print the one that appears first in the list.
@@ -26,7 +26,7 @@ print(first_unique_frequency(arr))
 
 #*******************************************************************************************************
 
-# Given a list of integers, find the first element such that: frequency(current_element) > sum of frequencies of all DISTINCT elements appearing after it
+# 1.2) Given a list of integers, find the first element such that: frequency(current_element) > sum of frequencies of all DISTINCT elements appearing after it
 # Input Format
 # A Python list of integers.
 # Constraints
@@ -55,6 +55,7 @@ nums = [1, 2, 2, 3, 3, 3, 4]
 print(first_element_with_greater_frequency(nums))
 
 #*******************************************************************************************************
+
 
 
 
