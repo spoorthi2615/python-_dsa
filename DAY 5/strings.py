@@ -144,7 +144,7 @@ print(is_palindrome("A man, a plan, a canal: Panama"))
 #***************************************************************************************************
 
  #2.9) length of the last word
- def lengthOfLastWord(s):
+def lengthOfLastWord(s):
     length = 0
     for i in range(len(s) - 1, -1, -1):
         if s[i] != ' ':
