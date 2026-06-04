@@ -48,3 +48,5 @@ class Solution:
                 longest_streak = max(longest_streak, current_streak)
         
         return longest_streak
+
+#*************************************************************************************************************************
