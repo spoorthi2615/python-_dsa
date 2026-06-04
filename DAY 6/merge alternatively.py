@@ -1,0 +1,20 @@
+#You are given two strings word1 and word2.
+#  Merge the strings by adding letters in alternating order, starting with word1. 
+# If a string is longer than the other, append the additional letters onto the end of the merged string.
+def merge_alternatively(word1, word2):
+    merged = []
+    i, j = 0, 0
+
+    while i < len(word1) and j < len(word2):
+        merged.append(word1[i])
+        merged.append(word2[j])
+        i += 1
+        j += 1
+
+    # Append remaining characters from word1 or word2
+    if i < len(word1):
+        merged.append(word1[i:])
+    if j < len(word2):
+        merged.append(word2[j:])
+
+    return ''.join(merged)
