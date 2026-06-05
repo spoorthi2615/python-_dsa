@@ -15,6 +15,8 @@ class solution:
                 res.append(num)
                 if len(res) == k:
                     return res
+#Example usage:
+nums = [1,1,1,2,2,3]
 
 
  
