@@ -2,7 +2,7 @@
 #Given an integer array nums and an integer k, return the k most frequent elements.
 #You may return the answer in any order.
 class solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    def topKFrequent(self, nums,k):
         count = {}
         for num in nums:
             count[num] = count.get(num, 0) + 1
