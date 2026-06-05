@@ -17,7 +17,7 @@ def validParentheses(s: str) -> bool:
                         return False
 
                     top = stack.pop()
-
+   
                     if ch == ')' and top != '(':
                         return False
                     if ch == '}' and top != '{':
