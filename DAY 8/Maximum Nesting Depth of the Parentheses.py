@@ -13,3 +13,4 @@ class Solution:
                 stack.pop()
         
         return max_depth
+    
