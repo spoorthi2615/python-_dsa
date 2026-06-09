@@ -60,3 +60,18 @@ def delete_from_end(self):
         second_last = second_last.next
     second_last.next = None
 
+#sum of all the nodes in the linked list
+def sum_of_nodes(self):
+    current = self.head
+    total_sum = 0
+    while current:
+        total_sum += current.data
+        current = current.next
+    return total_sum
+
+
+
+
+
+
+
