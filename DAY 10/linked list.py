@@ -42,4 +42,21 @@ class LinkedList:
 linked_list = LinkedList()
 print(linked_list.head) #None
 
+#create delete from begining in linked list
+def delete_from_begining(self):
+    if self.head is None:
+        return
+    self.head = self.head.next
+
+#create delete from end in linked list
+def delete_from_end(self):
+    if self.head is None:
+        return
+    if self.head.next is None:
+        self.head = None
+        return
+    second_last = self.head
+    while second_last.next.next:
+        second_last = second_last.next
+    second_last.next = None
 
