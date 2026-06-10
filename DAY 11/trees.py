@@ -68,21 +68,21 @@ def height(root):
 
 #top view of the tree
 def top_view(root):
-d={}
-q=[root]
-root.level=0
-while q:
-    curr=q.pop(0)
-    if curr.level not in d:
-        d[curr.level]=curr.data
-    if curr.left:
-        curr.left.level=curr.level-1
-        q.append(curr.left)
-    if curr.right:
-        curr.right.level=curr.level+1
+    d={}
+    q=[root]
+    root.level=0
+    while q:
+        curr=q.pop(0)
+        if curr.level not in d:
+            d[curr.level]=curr.data
+        if curr.left:
+            curr.left.level=curr.level-1
+            q.append(curr.left)
+        if curr.right:
+            curr.right.level=curr.level+1
 
 #check whether a tree is binary search tree or not
-def
+
 
 
     
