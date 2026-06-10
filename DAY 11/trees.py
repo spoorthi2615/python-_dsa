@@ -1,4 +1,4 @@
-class Node
+class Node:
 #in order to represent a node in a binary tree
     def __init__(self, value):
         self.value = value
