@@ -6,15 +6,9 @@
 
 # Return the number of restricted paths from node 1 to node n. Since that number may be too large, return it modulo 109 + 7.
 import heapq
-from functools import lru_cache
 
 class Solution(object):
     def countRestrictedPaths(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9 + 7
 
         graph = [[] for _ in range(n + 1)]
@@ -23,7 +17,6 @@ class Solution(object):
             graph[u].append((v, w))
             graph[v].append((u, w))
 
-        # Dijkstra from node n
         dist = [float('inf')] * (n + 1)
         dist[n] = 0
 
@@ -42,10 +35,14 @@ class Solution(object):
                     dist[nei] = nd
                     heapq.heappush(pq, (nd, nei))
 
-        @lru_cache(None)
+        memo = {}
+
         def dfs(node):
             if node == n:
                 return 1
+
+            if node in memo:
+                return memo[node]
 
             paths = 0
 
@@ -53,6 +50,7 @@ class Solution(object):
                 if dist[nei] < dist[node]:
                     paths = (paths + dfs(nei)) % MOD
 
+            memo[node] = paths
             return paths
 
         return dfs(1)
